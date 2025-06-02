@@ -19,7 +19,7 @@ const details = (): IpluginDetails => ({
   pType: '',
   requiresVersion: '2.11.01',
   sidebarPosition: -1,
-  icon: 'faRandom',
+  icon: 'faShuffle',
   inputs: [
     {
       label: 'Movie Base Directory',
@@ -62,7 +62,7 @@ const movieExtrasFileRegex = /^(?<movie>.* \(\d{4}\))-(?<extra>.*-\w+)$/ig;
 // e.g. DuckTales - S01E01 - Don't Give Up the Ship (1)
 // e.g. DuckTales - S01E01-E03 - Don't Give Up the Ship (1) & Wronguay in Ronguay (2) & ...
 // eslint-disable-next-line max-len
-const tvShowFileRegex = /^(?<show>.*) - S(?<season>\d{1,2})E(?<episode>\d{1,2})(?:-E(?<episode2>\d{1,2}))?(?:\s*-\s*(?<episodeName>.*))?$/ig;
+const tvShowFileRegex = /^(?<show>.*) - S(?<season>\d{2}|\d{4})E(?<episode>\d{1,3})(?:-E(?<episode2>\d{1,3}))?(?:\s*-\s*(?<episodeName>.*))?$/ig;
 
 const format2Digits = (num: string): string => parseInt(num, 10)
   .toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false });
